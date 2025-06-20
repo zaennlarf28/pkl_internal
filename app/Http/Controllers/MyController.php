@@ -95,10 +95,10 @@ class MyController extends Controller
         $buku = session('data_buku', $this->data);
 
         //cari index
-        $index = array_search($id, array_column($buku, id));
+        $index = array_search($id, array_column($buku, 'id'));
         array_splice($buku, $index, 1);
 
         session (['data_buku' => $buku]);
-        return redirect('/buku');
+        return redirect('/buku'); 
     }
 }

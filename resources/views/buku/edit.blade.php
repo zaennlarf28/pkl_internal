@@ -24,9 +24,10 @@
         <input type="text" name="judul" value="{{ $buku['judul'] }}" required><br>
         <input type="number" name="harga" value="{{ $buku['harga'] }}" required><br>
         <select name="kategori" id="" required>
-            <option value="{{ $buku['kategori'] == 'Self Improvment' ? 'selected' : ''}}">Self Improvment</option>
-            <option value="{{ $buku['kategori'] == 'Bacaan' ? 'selected' : ''}}">Bacaan</option>
-            <option value="{{ $buku['kategori'] == 'Teknologi' ? 'selected' : ''}}">Teknologi</option>
+            <option value="">Pilih Kategori</option>
+            <option value="Self Improvment" {{ $buku['kategori'] == 'Self Improvment' ? 'selected' : ''}}">Self Improvment</option>
+            <option value="Bacaan" {{ $buku['kategori'] == 'Bacaan' ? 'selected' : ''}}">Bacaan</option>
+            <option value="Teknologi" {{ $buku['kategori'] == 'Teknologi' ? 'selected' : ''}}">Teknologi</option>
         </select><br>
         <button type="submit">Simpan</button>
         <button type="submit">Refresh</button>

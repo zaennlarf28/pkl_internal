@@ -33,7 +33,6 @@
                     @method('DELETE')
                     <button type="submit" onlick="return confirm('Apakah Anda Yakin?')">Delete</button>
                 </form>
-                <button>Delete</button>
             </td>
         </tr>
 
