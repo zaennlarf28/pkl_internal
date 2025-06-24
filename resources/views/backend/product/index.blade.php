@@ -25,6 +25,8 @@
                                     <th>Kategori</th>
                                     <th>Harga</th>
                                     <th>Stok</th>
+                                    <th>Gambar</th>
+                                    <th>Deskripsi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -37,7 +39,15 @@
                                     <td>{{$data->price}}</td>
                                     <td>{{$data->stock}}</td>
                                     <td>
-                                        <a href="{{ route('product.edit',$data->id) }}" class="btn btn-sm btn-success">
+                                        @if($data->image)
+                                            <img src="{{ asset('storage/' . $data->image) }}" width="60">
+                                        @else
+                                            <span class="text-muted">Tidak ada gambar</span>
+                                        @endif
+                                    </td>
+                                    <td>{{ Str::limit($data->description, 50, '...') }}</td>
+                                    <td>
+                                        <a href="{{ route('product.show',$data->id) }}" class="btn btn-sm btn-success">
                                             Show
                                         </a> |
                                         <a href="{{ route('product.edit',$data->id) }}" class="btn btn-sm btn-warning">

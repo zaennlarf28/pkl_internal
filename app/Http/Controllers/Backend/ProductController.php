@@ -61,9 +61,13 @@ class ProductController extends Controller
     }
 
     public function show(string $id)
-    {
-        //
-    }
+{
+    // Ambil data produk beserta relasi kategori
+    $product = Product::with('category')->findOrFail($id);
+
+    // Kirim ke view product.show
+    return view('backend.product.show', compact('product'));
+}
 
     public function edit(string $id)
     {
