@@ -20,7 +20,7 @@ class Product extends Model
         return $this->hasMany(Cart::class);
     }
 
-    public function review()
+    public function reviews()
     {
         return $this->hasMany(Review::class);
     }
@@ -29,5 +29,10 @@ class Product extends Model
     public function orders()
     {
         return $this->belongsToMany(Order::class)->withPivot('qty', 'price')->withTimestamps();
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
                     Data Category
-                    <a href="{{ route('category.create') }}" class="btn btn-info btn-sm text-white">Tambah</a>
+                    <a href="{{ route('backend.category.create') }}" class="btn btn-info btn-sm text-white">Tambah</a>
                 </div>
                 <div class="card-body">
                     <div class="table tabel-responsive">
@@ -30,8 +30,8 @@
                                     <td>{{ $data->name }}</td>
                                     <td>{{ $data->slug }}</td>
                                     <td>
-                                        <a href="{{ route('category.edit', $data->id) }}" class="btn btn-sm btn-warning">Edit</a> |
-                                        <a href="{{ route('category.destroy', $data->id) }}" class="btn btn-sm btn-danger" data-confirm-delete>Delete</a>
+                                        <a href="{{ route('backend.category.edit', $data->id) }}" class="btn btn-sm btn-warning">Edit</a> |
+                                        <a href="{{ route('backend.category.destroy', $data->id) }}" class="btn btn-sm btn-danger" data-confirm-delete>Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

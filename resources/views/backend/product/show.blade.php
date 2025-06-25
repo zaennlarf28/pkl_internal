@@ -45,7 +45,7 @@
                         </table>
 
                         <div class="text-end">
-                            <a href="{{ route('product.index') }}" class="btn btn-primary">Kembali</a>
+                            <a href="{{ route('backend.product.index') }}" class="btn btn-primary">Kembali</a>
                         </div>
                     </div> <!-- /.card-body -->
                 </div> <!-- /.panel-body -->
