@@ -111,7 +111,7 @@ class CartController extends Controller
         Cart::where('user_id', auth()->id())->delete();
 
         toast('Pesanan berhasil dibuat!', 'success');
-        return redirect()->route('orders.index');
+        return redirect()->route('backend.orders.index');
     }
 
 }

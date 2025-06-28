@@ -283,7 +283,7 @@
                         <ul>
                             @auth
                             <li>
-                                <a href="">My Orders</a>
+                                <a href="{{ route('order.index') }}">My Order</a>
                             </li>
                             <li>
                                 <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -330,7 +330,7 @@
             <ul>
                 @auth
                 <li>
-                    <a href="">My Orders</a>
+                    <a href="{{ route('order.index') }}">My Order</a>
                 </li>
                 <li>
                     <a href="{{ route('cart.index') }}">Cart</a>

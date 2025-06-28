@@ -7,8 +7,11 @@ use App\Http\Controllers\BackendController;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\OrderController as BackendOrdersController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
+
 //import middleware
 use App\Http\Middleware\Admin;
 
@@ -44,7 +47,8 @@ Route::get('/orders', [OrderController::class, 'index']) -> name('order.index');
 Route::get('/orders/{id}', [OrderController::class, 'show']) -> name('order.show');
 
 // review
-
+Route::post('/product/{product}/review', [\App\Http\Controllers\ReviewController::class, 'store'])
+    ->middleware('auth')->name('review.store');
 // Route::get('/', function () {
 //     return view('layouts.frontend');
 // });
@@ -107,6 +111,7 @@ Route::group(['prefix'=>'admin', 'as' => 'backend.', 'middleware'=>['auth', Admi
     // crud
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);
-    Route::resource('/orders', OrdersController::class);
+    Route::resource('/orders', BackendOrdersController::class);
+    Route::put('/orders/{id}/status', [BackendOrdersController::class, 'updateStatus'])->name('orders.updateStatus');
 
 });

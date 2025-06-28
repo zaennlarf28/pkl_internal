@@ -20,6 +20,7 @@
 <!-- Breadcrumb End -->
 
 <!-- Product Detail Start -->
+ @foreach ($product as $data)
 <div class="single__product sp_top_50 sp_bottom_80">
     <div class="container">
         <div class="row">
@@ -28,12 +29,12 @@
                 <div class="featurearea__details__img">
                     <div class="featurearea__big__img">
                         <div class="featurearea__single__big__img">
-                            <img src="{{ Storage::url($data->image) }}" alt="{{ $product->name }}">
+                            <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
                         </div>
                     </div>
                     <div class="featurearea__thumb__img featurearea__thumb__img__slider__active slider__default__arrow">
                         <div class="featurearea__single__thumb__img">
-                            <img src="{{ Storage::url($data->image) }}" alt="{{ $product->name }}">
+                            <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
                         </div>
                     </div>
                 </div>
@@ -162,4 +163,5 @@
         </div>
     </div>
 </div>
+@endforeach
 @endsection
