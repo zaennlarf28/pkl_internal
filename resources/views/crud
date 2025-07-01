@@ -10,3 +10,9 @@ datatables bootstrap 5
    new DataTable('#dataCategory');
 </script>
 @endpush
+
+
+API pemindahan data -> php artisan install api -> composer require laravel sanctum -> use Laravel\Sanctum\HasApiTokens;
+JASON JavaScript 
+backend aja laravel lumen
+csrf = cross site request forgery, jenis serangan siber dimana memanipulasi pengguna

@@ -50,7 +50,7 @@
                                 </td>
                                 <td>{{ $order->created_at->format('d M Y') }}</td>
                                 <td>
-                                    <a href="{{ route('order.show', $order->id) }}" class="btn btn-sm btn-primary">
+                                    <a href="{{ route('orders.show', $order->id) }}" class="btn btn-sm btn-primary">
                                         View
                                     </a>
                                 </td>

@@ -12,6 +12,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 
+
 //import middleware
 use App\Http\Middleware\Admin;
 
@@ -29,7 +30,7 @@ use App\Http\Middleware\Admin;
 // Route guest member
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/product', [FrontendController::class, 'product']) -> name('product.index');
-Route::get('/product/{product}', [FrontendController::class, 'singleProduct']) -> name('product.shows');
+Route::get('/product/{product}', [FrontendController::class, 'singleProduct']) -> name('product.show');
 Route::get('/product/category/{slug}', [FrontendController::class, 'filterByCategory']) -> name('product.filter');
 Route::get('/search', [FrontendController::class, 'search']) -> name('product.search');
 
@@ -43,11 +44,11 @@ Route::delete('/cart/{id}', [CartController::class, 'remove']) -> name('cart.rem
 
 // orders
 Route::get('/checkout', [CartController::class, 'checkout']) -> name('cart.checkout');
-Route::get('/orders', [OrderController::class, 'index']) -> name('order.index');
-Route::get('/orders/{id}', [OrderController::class, 'show']) -> name('order.show');
+Route::get('/orders', [OrderController::class, 'index']) -> name('orders.index');
+Route::get('/orders/{id}', [OrderController::class, 'show']) -> name('orders.show');
 
 // review
-Route::post('/product/{product}/review', [\App\Http\Controllers\ReviewController::class, 'store'])
+Route::post('/product/{product}/review', [App\Http\Controllers\ReviewController::class, 'store'])
     ->middleware('auth')->name('review.store');
 // Route::get('/', function () {
 //     return view('layouts.frontend');

@@ -40,7 +40,7 @@
                                     <tr>
                                         <td class="cartarea__product__thumbnail">
                                             <a href="#">
-                                                <img src="{{ Storage::url($item->product->image)}}"
+                                                <img src="{{Storage::url($item->product->image)}}"
                                                     alt="{{ $item->product->name }}" width="80">
                                             </a>
                                         </td>
@@ -84,7 +84,7 @@
                                     </tr>
                                 @endforelse
                                 @php
-                                    $total = $cartItems->sum(fn($item) => $item->qty * $item->product->price);
+                                    $total = collect($cartItems)->sum(fn($item) => $item->qty * $item->product->price);
                                 @endphp
                                 <tr>
                                     <th class="text-center">Total</th>
@@ -102,7 +102,12 @@
                 <div class="col-lg-12">
                     <div class="cartarea__shiping__update__wrapper">
                         <div class="cartarea__shiping__update">
-                            <a class="default__button" href="{{ route('cart.checkout') }}">Proceed to Checkout</a>
+                            <form action="{{ route('cart.checkout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="default__button">
+                                    Proceed to Checkout
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

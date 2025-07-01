@@ -1,8 +1,7 @@
 @extends('layouts.frontend')
-
 @section('content')
 <!-- Breadcrumb Start -->
-<div class="breadcrumb">
+<div class="breadcrumb__area">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -20,15 +19,14 @@
 <!-- Breadcrumb End -->
 
 <!-- Product Detail Start -->
- @foreach ($product as $data)
-<div class="single__product sp_top_50 sp_bottom_80">
+<div class="single_product sptop50 spbottom_80">
     <div class="container">
         <div class="row">
             <!-- Product Image -->
             <div class="col-xl-6 col-lg-6">
-                <div class="featurearea__details__img">
-                    <div class="featurearea__big__img">
-                        <div class="featurearea__single__big__img">
+                <div class="featurearea_details_img">
+                    <div class="featurearea_big_img">
+                       <div class="featurearea__single__big__img">
                             <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
                         </div>
                     </div>
@@ -42,49 +40,50 @@
 
             <!-- Product Info -->
             <div class="col-xl-6 col-lg-6">
-                <div class="single__product__wrap">
-                    <div class="single__product__heding">
+                <div class="single_product_wraper">
+                    <div class="single_product_heading">
+                        <br>
                         <h2>{{ $product->name }}</h2>
                     </div>
 
-                    <div class="single__product__price mb-2">
+                    <div class="single_product_price mb-2">
                         <span>Rp {{ number_format($product->price, 0, ',', '.') }}</span>
                     </div>
 
                     <hr>
 
-                    <div class="single__product__description mb-3">
+                    <div class="single_product_description mb-3">
                         <p>{{ $product->description }}</p>
                     </div>
 
-                    <div class="single__product__special__feature mb-3">
+                    <div class="single_productspecial_feature mb-3">
                         <ul>
-                            <li class="product__variant__inventory">
+                            <li class="product_variant_inventory">
                                 <strong class="inventory__title">Availability:</strong>
                                 <span class="variant__inventory">
                                     {{ $product->stock > 0 ? $product->stock . ' left in stock' : 'Out of Stock' }}
                                 </span>
                             </li>
-                            <li>
-                                @php $averageRating = $product->reviews()->avg('point');
 
-                                @endphp
-                                @if($averageRating)
-                                <p>Rating rata-rata: <strong>{{ number_format($averageRating, 1) }}/5</strong></p>
-                                @endif
+                            @php
+                            $averageRating = $product->reviews()->avg('point');
+                            @endphp
 
-                            </li>
+                            @if($averageRating)
+                            <li>Rating rata-rata: <strong>{{ number_format($averageRating, 1) }}/5</strong></li>
+                            @endif
                         </ul>
                     </div>
 
                     <form action="{{ route('cart.add', $product->id) }}" method="POST">
                         @csrf
-                        <div class="single__product__quantity mb-3">
+                        <div class="single_product_quantity mb-3">
                             <div class="qty-container me-3">
                                 <button type="button" class="qty-btn-minus btn-qty">-</button>
-                                <input type="text" name="qty" value="1" class="input-qty">
+                                <input type="number" name="qty" value="1" max="{{ $product->stock }}" class="input-qty">
                                 <button type="button" class="qty-btn-plus btn-qty">+</button>
                             </div>
+
                             <button type="submit" class="default__button">
                                 <i class="fas fa-shopping-cart"></i> Add to Cart
                             </button>
@@ -92,7 +91,7 @@
                         </div>
                     </form>
 
-                    <div class="single__product__bottom__menu">
+                    <div class="single_productbottom_menu">
                         <ul>
                             <li><a href="#"><i class="far fa-heart"></i> Add to Wishlist</a></li>
                             <li><a href="#"><i class="fas fa-exchange-alt"></i> Compare</a></li>
@@ -103,11 +102,9 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<!-- Review & Contact Section -->
-<div class="single__product__contact sp_bottom_80">
+        <!-- Review & Comment Section -->
+        <div class="single__product__contact sp_bottom_80">
     <div class="container">
         <div class="row g-5">
             <!-- Form Review -->
@@ -162,6 +159,7 @@
             </div>
         </div>
     </div>
+    </div>
+    </div>
 </div>
-@endforeach
 @endsection
