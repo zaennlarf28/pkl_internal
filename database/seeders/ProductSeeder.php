@@ -19,22 +19,22 @@ class ProductSeeder extends Seeder
 
         \App\Models\Product::create([
             'category_id' => 1,
-            'name' => 'Baju Anak',
-            'slug' => 'baju-anak',
-            'description' =>'Lorem Ipsum',
+            'name' => 'Mug',
+            'slug' => 'mug',
+            'description' =>'Custom mug',
             'price' => 75000,
             'stock' => 100,
-            'image' => 'image.png',
+            'image' => 'products/mug.jpg',
         ]);
 
         \App\Models\Product::create([
             'category_id' => 2,
-            'name' => 'Samsung S25 5g',
-            'slug' => 'samsung-s25-5g',
-            'description' =>'Lorem Ipsum',
+            'name' => 'Tumbler',
+            'slug' => 'tumbler',
+            'description' =>'Custom tumbler',
             'price' => 1750000,
             'stock' => 100,
-            'image' => 'image.png',
+            'image' => 'products/tumbler.jpg',
         ]);
     }
 }
