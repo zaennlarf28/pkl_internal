@@ -24,7 +24,7 @@ class ProductSeeder extends Seeder
             'description' =>'Custom mug',
             'price' => 75000,
             'stock' => 100,
-            'image' => 'products/mug.jpg',
+            'image' => 'products/mugg.jpg',
         ]);
 
         \App\Models\Product::create([
