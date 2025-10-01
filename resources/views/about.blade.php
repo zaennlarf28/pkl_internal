@@ -9,7 +9,7 @@
                     <h1>About Us</h1>
                     <ul>
                         <li>
-                            <a href="#">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="color__blue">
                             About Us
@@ -25,22 +25,30 @@
 <!-- about__section__start -->
 <div class="about sp_top_80 sp_bottom_80">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-12 col-12">
                 <div class="about__text">
-                    <h2>Minimal<span class="primary__color">in</span> E-Commerce</h2>
-                    <p>Minimalin E-Commerce is a dynamic and innovative online retail platform that offers a wide range
-                        of products to customers worldwide. Established in 1191, our company has rapidly grown to become
-                        a prominent player in the eCommerce industry. Our mission is to provide customers with a
-                        seamless and convenient shopping experience while offering a diverse selection of high-quality
-                        products.</p>
-                    <p>Minimalin E-Commerce is dedicated to setting new standards in the eCommerce landscape, providing
-                        convenience, choice, and quality to our valued customers.</p>
+                    <h2><span class="primary__color">Karya Unyil</span> Merchandiser</h2>
+                    <p>
+                        Karya Unyil Merchandiser hadir untuk kamu yang ingin punya merchandise 
+                        unik, custom, dan penuh makna. Kami percaya setiap orang punya cerita, 
+                        dan cerita itu bisa dituangkan lewat produk yang kamu gunakan sehari-hari.
+                    </p>
+                    <p>
+                        Mulai dari mug, kaos, totebag, hingga gantungan kunci — semua bisa kamu 
+                        desain sesuai keinginan. Dengan bahan berkualitas dan harga ramah, kami 
+                        siap membantu mewujudkan ide kreatifmu menjadi nyata.
+                    </p>
+                    <ul class="mt-3">
+                        <li>✔ Custom desain sesuai keinginan</li>
+                        <li>✔ Bisa order satuan maupun partai besar</li>
+                        <li>✔ Cocok untuk hadiah, komunitas, dan event</li>
+                    </ul>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                <div class="about__img">
-                    <img src="img/about/about__1.jpg" alt="">
+                <div class="about__img text-center">
+                    <img src="{{ asset('assets/frontend/img/about/karyaunyillogo.jpg') }}" alt="Tentang Kami">
                 </div>
             </div>
         </div>
@@ -54,11 +62,16 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="video__img">
-                    <img src="img/about/video-banner__1.jpg" alt="">
+                    <img src="{{ asset('assets/frontend/img/about/video-banner__1.jpg') }}" alt="Video Banner">
                     <div class="video__icon">
-                        <a class="video-btn" href="https://www.youtube.com/watch?v=JQpk-DoMn3I"> <i
-                                class="fa fa-play"></i></a>
+                        <a class="video-btn" href="https://www.youtube.com/watch?v=JQpk-DoMn3I"> 
+                            <i class="fa fa-play"></i>
+                        </a>
                     </div>
+                </div>
+                <div class="text-center mt-3">
+                    <h3>Lihat proses kreatif kami</h3>
+                    <p>Kenali bagaimana ide-ide custom kamu bisa diwujudkan bersama Karya Unyil.</p>
                 </div>
             </div>
         </div>
@@ -71,16 +84,18 @@
     <div class="container testimonial__color testimonial__color__5">
         <div
             class="row testimonial__slider__active slider__default__arrow slider__default__dot slider__default__dot--2">
+            
             <div class="col-xl-12">
                 <div class="testimonial__inner testimonial__padding text-center">
                     <div class="testimonial__img">
                         <i class="fa fa-quote-right"></i>
                     </div>
-
                     <div class="testimonial__info">
-                        <p>Writing has never been my strong suit, but ChatGPT has changed the game for me. Whether it's
-                            crafting compelling emails, creative stories, or engaging social media posts.</p>
-                        <h4>Michael Chen</h4>
+                        <p>
+                            "Pesanan mug custom saya hasilnya bagus banget! Warnanya cerah dan tahan lama. 
+                            Temen-temen pada suka."
+                        </p>
+                        <h4>Sinta – Mahasiswi</h4>
                     </div>
                 </div>
             </div>
@@ -90,11 +105,12 @@
                     <div class="testimonial__img">
                         <i class="fa fa-quote-right"></i>
                     </div>
-
                     <div class="testimonial__info">
-                        <p>Writing has never been my strong suit, but ChatGPT has changed the game for me. Whether it's
-                            crafting compelling emails, creative stories, or engaging social media posts.</p>
-                        <h4>Michael Chen</h4>
+                        <p>
+                            "Kaos custom untuk komunitas kami jadi lebih keren. Bahannya adem, 
+                            desainnya sesuai banget sama request!"
+                        </p>
+                        <h4>Andi – Ketua Komunitas</h4>
                     </div>
                 </div>
             </div>
@@ -104,16 +120,18 @@
                     <div class="testimonial__img">
                         <i class="fa fa-quote-right"></i>
                     </div>
-
                     <div class="testimonial__info">
-                        <p>Writing has never been my strong suit, but ChatGPT has changed the game for me. Whether it's
-                            crafting compelling emails, creative stories, or engaging social media posts.</p>
-                        <h4>Michael Chen</h4>
+                        <p>
+                            "Pelayanan ramah, respon cepat, dan bisa custom desain sesuai keinginan. 
+                            Recommended banget buat hadiah unik!"
+                        </p>
+                        <h4>Dewi – Customer</h4>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
-<!-- testimonial__section__start -->
+<!-- testimonial__section__end -->
 @endsection

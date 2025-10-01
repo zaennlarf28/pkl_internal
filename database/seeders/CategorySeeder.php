@@ -19,8 +19,8 @@ class CategorySeeder extends Seeder
         DB::table('categories')->delete();
 
         \App\Models\Category::create([
-            'name' => 'Fashion',
-            'slug' => 'fashion',
+            'name' => 'Cups & Bowls',
+            'slug' => 'cups-bowls',
         ]);
 
         \App\Models\Category::create([

@@ -4,34 +4,34 @@
             <div class="row common__row position-relative">
                 <div class="col-xl-2 col-lg-2 col-md-6">
                     <div class="headerarea__logo">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/logo/logo__1.png') }}" alt=""></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/img/logo/karyaunyil.png') }}" height="75" alt=""></a>
                     </div>
                 </div>
 
-
-                <div class="col-xl-7 col-lg-7 col-md-6 main_menu_wrap">
-
-                    <div class="headerarea__main__menu ">
+                <!-- NAV MENU -->
+                <div class="col-xl-8 col-lg-7 col-md-6 main_menu_wrap d-flex align-items-center justify-content-center">
+                    <div class="headerarea__main__menu">
                         <nav>
-                            <ul>
+                            <ul class="d-flex justify-content-center align-items-center gap-4 m-0 p-0" style="list-style:none;">
                                 <li>
-                                    <a href="{{ url('/') }}">Home
-                                    </a>
+                                    <a href="{{ url('/') }}">Home</a>
                                 </li>
-
                                 <li class="position-static">
-                                    <a href="{{ route('product.index') }}">Product
-                                    </a>
+                                    <a href="{{ route('product.index') }}">Product</a>
                                 </li>
-                                <li><a href="{{ url('about') }}">About</a> </li>
+                                <li>
+                                    <a href="{{ url('about') }}">About</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('contact') }}">Contact</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
-
                 </div>
-
-
-                <div class="col-xl-3 col-lg-3 col-md-6">
+                <!-- END NAV MENU -->
+                 
+                <div class="col-xl-2 col-lg-3 col-md-6">
 
                     <div class="headerarea__right">
 

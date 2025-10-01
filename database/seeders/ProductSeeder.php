@@ -20,7 +20,7 @@ class ProductSeeder extends Seeder
         \App\Models\Product::create([
             'category_id' => 1,
             'name' => 'Mug',
-            'slug' => 'mug',
+            'slug' => 'cups-bowls',
             'description' =>'Custom mug',
             'price' => 75000,
             'stock' => 100,
@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
         \App\Models\Product::create([
             'category_id' => 2,
             'name' => 'Tumbler',
-            'slug' => 'tumbler',
+            'slug' => 'cups-bowls',
             'description' =>'Custom tumbler',
             'price' => 1750000,
             'stock' => 100,
