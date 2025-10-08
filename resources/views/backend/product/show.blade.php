@@ -20,14 +20,6 @@
                                 <td>{{ $product->category->name }}</td>
                             </tr>
                             <tr>
-                                <th>Harga</th>
-                                <td>Rp {{ number_format($product->price, 0, ',', '.') }}</td>
-                            </tr>
-                            <tr>
-                                <th>Stok</th>
-                                <td>{{ $product->stock }}</td>
-                            </tr>
-                            <tr>
                                 <th>Deskripsi</th>
                                 <td>{{ $product->description }}</td>
                             </tr>

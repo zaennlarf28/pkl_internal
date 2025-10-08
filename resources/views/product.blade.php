@@ -92,7 +92,7 @@
                                                             href="{{ url('/product/' . $data->slug) }}">{{ $data->name }}</a>
                                                     </h3>
                                                     <div class="grid__wraper__price">
-                                                        <span>Rp {{ number_format($data->price, 0, ',', '.') }}</span>
+                                                       
                                                     </div>
                                                 </div>
                                             </div>

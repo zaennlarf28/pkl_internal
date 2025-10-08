@@ -104,7 +104,7 @@
                         <div class="grid__wraper">
                             <div class="grid__wraper__img">
                                 <div class="grid__wraper__img__inner">
-                                    <a href="/product/{{ $data->slug }}">
+                                    <a href="{{ route('designs.create', $data->slug) }}">
                                         <img class="primary__image" src="{{ Storage::url($data->image) }}"
                                             alt="Primary Image">
                                         <img class="secondary__image" src="{{Storage::url($data->image)}}"
@@ -146,7 +146,7 @@
                                 </h3>
                                 <div class="grid__wraper__price">
 
-                                    <span>Rp.{{number_format($data->price,0,'.','.')}}</span>
+                                    
                                 </div>
 
                             </div>

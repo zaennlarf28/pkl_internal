@@ -22,8 +22,6 @@ class ProductSeeder extends Seeder
             'name' => 'Mug',
             'slug' => 'cups-bowls',
             'description' =>'Custom mug',
-            'price' => 75000,
-            'stock' => 100,
             'image' => 'products/mugg.jpg',
         ]);
 
@@ -32,8 +30,6 @@ class ProductSeeder extends Seeder
             'name' => 'Tumbler',
             'slug' => 'cups-bowls',
             'description' =>'Custom tumbler',
-            'price' => 1750000,
-            'stock' => 100,
             'image' => 'products/tumbler.jpg',
         ]);
     }

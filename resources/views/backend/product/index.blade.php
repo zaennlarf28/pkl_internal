@@ -23,8 +23,6 @@
                                     <th>No</th>
                                     <th>Nama Product</th>
                                     <th>Kategori</th>
-                                    <th>Harga</th>
-                                    <th>Stok</th>
                                     <th>Gambar</th>
                                     <th>Deskripsi</th>
                                     <th>Aksi</th>
@@ -36,8 +34,6 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->category->name}}</td>
-                                    <td>{{$data->price}}</td>
-                                    <td>{{$data->stock}}</td>
                                     <td>
                                         @if($data->image)
                                             <img src="{{ asset('storage/' . $data->image) }}" width="60">

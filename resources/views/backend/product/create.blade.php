@@ -22,16 +22,6 @@
                                     </span>
                                     @enderror
                                 </div>
-                                <div class="mb-2">
-                                    <label for="">Harga</label>
-                                    <input type="number" name="price"
-                                        class="form-control @error('price') is-invalid @enderror">
-                                    @error('price')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
                             </div>
                             <div class="col">
                                 <div class="mb-2">
@@ -43,16 +33,6 @@
                                         @endforeach
                                     </select>
                                     @error('category_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="mb-2">
-                                    <label for="">Stok</label>
-                                    <input type="number" name="stock"
-                                        class="form-control @error('stock') is-invalid @enderror">
-                                    @error('stock')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>

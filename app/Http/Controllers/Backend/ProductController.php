@@ -33,9 +33,7 @@ class ProductController extends Controller
         $validated = $request->validate([
             'name'        => 'required|unique:categories',
             'category_id' => 'required',
-            'price'       => 'required|numeric',
             'description' => 'required',
-            'stock'       => 'required|numeric',
             'image'       => 'required|image|mimes:jpg,png',
         ]);
 
@@ -44,8 +42,6 @@ class ProductController extends Controller
         $product->slug        = Str::slug($request->name, '-');
         $product->category_id = $request->category_id;
         $product->description = $request->description;
-        $product->price       = $request->price;
-        $product->stock       = $request->stock;
         // upload gambar
         if ($request->hasFile('image')) {
             $file       = $request->file('image');
@@ -82,9 +78,7 @@ class ProductController extends Controller
         $validated = $request->validate([
             'name'        => 'required|unique:categories',
             'category_id' => 'required',
-            'price'       => 'required|numeric',
             'description' => 'required',
-            'stock'       => 'required|numeric',
             // 'image'       => 'image|mimes:jpg,png',
         ]);
 
@@ -93,8 +87,6 @@ class ProductController extends Controller
         $product->slug        = Str::slug($request->name, '-');
         $product->category_id = $request->category_id;
         $product->description = $request->description;
-        $product->price       = $request->price;
-        $product->stock       = $request->stock;
         // upload gambar
         if ($request->hasFile('image')) {
             // menghapus foto lama

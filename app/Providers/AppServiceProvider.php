@@ -1,10 +1,8 @@
 <?php
 namespace App\Providers;
 
-use App\Models\Cart;
-use Auth;
 use Illuminate\Support\ServiceProvider;
-use View;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,19 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        // Inject variabel global ke semua view
         View::composer('*', function ($view) {
-            $cartItems = [];
-
-            if (Auth::check()) {
-                $cartItems = Cart::with('product')
-                    ->where('user_id', Auth::id())
-                    ->get(); // <-- ini sudah collection
-            }
-
-            // pastikan ini adalah collection, bukan array
-            $view->with('cartItems', collect($cartItems));
+            // karena sistem keranjang tidak dipakai lagi
+            $view->with('cartItems', collect()); 
         });
-
     }
 }

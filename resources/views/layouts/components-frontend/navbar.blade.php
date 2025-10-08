@@ -87,10 +87,6 @@
 
                             </li>
 
-
-
-
-
                         </ul>
 
                     </div>
@@ -259,15 +255,9 @@
                                         </ul>
                                     </li>
                                 </ul>
-
-
                             </li>
-
-
                             <li><a href="{{ url('about') }}">About</a>
                             </li>
-
-
                         </ul>
                     </nav>
 
